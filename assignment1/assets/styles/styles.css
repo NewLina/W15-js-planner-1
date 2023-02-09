@@ -6,19 +6,33 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-.heading{
-    font-size: 2.2vw;
+.input__heading, .task-list__heading {
+    font-size: 2vw;
     color: black;
 }
 
 .input{
     padding-bottom: 10%;
 }
-
+.text{
+    font-size: 1.6vw;
+    padding: 1.4%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5vw;
+    flex-grow: 0.9;
+}
+.button-add, .button-clean{
+    font-size: 1.4vw;
+    padding: 0.9% 3% 0.9% 3%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
 .input__content{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 2%;
 }
 
 
