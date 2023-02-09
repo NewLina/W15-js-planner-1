@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Приложение-планировщик</title>
+</head>
+
+<body class="wrapper">
+    <div class="input">
+        <h2 class="input__heading">Добавить задачу</h2>
+        <div class="input__content">
+            <input class="text" type="text" placeholder="Новая задача" id="inputText" name="text">
+            <button class="button-add">Добавить</button>
+        </div>
+    </div>
+
+    <div class="task-list">
+        <h2 class="task-list__heading">Список задач</h2>
+        <div class="task-list__container container"></div>
+        <button class="task-list__button button-clean">Очистить список задач</button>
+    </div>
+
+
+    <script src="./assets/index.js"></script>
+</body>
+
+</html>
