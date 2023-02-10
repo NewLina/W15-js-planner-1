@@ -7,7 +7,8 @@ const tasks=[];
 addButton.onclick = () => {
     const inputValue=taskTextInput.value;
     if (inputValue) {
-        addTask(inputValue);
+        createTask(inputValue);
+        addTask();
         taskTextInput.value="";
     }
 console.log(tasks);
@@ -21,9 +22,9 @@ function createTask(text) {
     tasks.push(task);
 }
 
-// function addTask
-tasks.forEach((item) => {
-    const containerCheckbox=document.createElement('input');
+function addTask(){
+    for (let item of tasks) {
+        const containerCheckbox=document.createElement('input');
     containerCheckbox.className='container__checkbox';
     containerCheckbox.type="checkbox";
     container.append(containerCheckbox);
@@ -32,4 +33,5 @@ tasks.forEach((item) => {
     containerContent.className='container__content';
     container.append(containerContent);
     containerContent.textContent=item.text;
-});
+    }
+}
