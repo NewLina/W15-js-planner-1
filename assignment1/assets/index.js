@@ -8,8 +8,8 @@ addButton.onclick = () => {
     const inputValue=taskTextInput.value;
     if (inputValue) {
         createTask(inputValue);
-        addTask();
         taskTextInput.value="";
+        addTask();
     }
 console.log(tasks);
 }
