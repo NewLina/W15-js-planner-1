@@ -1,6 +1,6 @@
 const taskTextInput=document.querySelector('.text');
 const addButton=document.querySelector('.button-add');
-const container=document.querySelector('.task-list__container');
+const taskContent=document.querySelector('.content');
 const cleanButton=document.querySelector('.button-clean');
 const tasks=[];
 
@@ -23,8 +23,13 @@ function createTask(text) {
 }
 
 function addTask(){
-    for (let item of tasks) {
-        const containerCheckbox=document.createElement('input');
+    tasks.forEach (function(item) {
+
+    const container=document.createElement('div');
+    container.className='container';
+    taskContent.append(container);
+
+    const containerCheckbox=document.createElement('input');
     containerCheckbox.className='container__checkbox';
     containerCheckbox.type="checkbox";
     container.append(containerCheckbox);
@@ -33,5 +38,5 @@ function addTask(){
     containerContent.className='container__content';
     container.append(containerContent);
     containerContent.textContent=item.text;
-    }
+    })
 }
