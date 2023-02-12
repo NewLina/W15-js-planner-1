@@ -2,7 +2,11 @@ const taskTextInput=document.querySelector('.text');
 const addButton=document.querySelector('.button-add');
 const taskContent=document.querySelector('.content');
 const cleanButton=document.querySelector('.button-clean');
-const tasks=[];
+const emptyContainer=document.querySelector('.emptyContainer');
+
+const toDoList=[];
+
+cleanButton.disabled=true;
 
 addButton.onclick = () => {
     const inputValue=taskTextInput.value;
@@ -10,33 +14,53 @@ addButton.onclick = () => {
         createTask(inputValue);
         taskTextInput.value="";
         addTask();
+        emptyContainer.className='emptyNotExist';
+        cleanButton.disabled=false;
     }
-console.log(tasks);
+console.log(toDoList);
 }
 
-function createTask(text) {
+function createTask(str) {
     const task = {
-        text: text,
-        isComplete: false
+        todo: taskTextInput.value,
+        checked: false
     }
-    tasks.push(task);
+    toDoList.push(task);
 }
 
 function addTask(){
-    tasks.forEach (function(item) {
+    toDoList.forEach (function(item) {
 
     const container=document.createElement('div');
     container.className='container';
     taskContent.append(container);
 
+    const containerContent=document.createElement('label');
+    containerContent.className='container__content';
+    containerContent.setAttribute('for', 'taskTextContent');
+    container.append(containerContent);
+    containerContent.textContent=item.todo;
+
     const containerCheckbox=document.createElement('input');
     containerCheckbox.className='container__checkbox';
+    containerCheckbox.id='taskTextContent';
     containerCheckbox.type="checkbox";
     container.append(containerCheckbox);
+    containerCheckbox.checked=item.checked;
+    containerCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            containerContent.style.color="red";
+        } else{
+            containerContent.style.color="black";
+        }
+    });
 
-    const containerContent=document.createElement('p');
-    containerContent.className='container__content';
-    container.append(containerContent);
-    containerContent.textContent=item.text;
     })
+    toDoList.length=0; 
+}
+
+cleanButton.onclick = () => {
+    taskContent.innerHTML="";
+    emptyContainer.classList.remove('emptyNotExist');
+    cleanButton.disabled=true;
 }

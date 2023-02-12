@@ -52,4 +52,21 @@ margin-right: 3%;
 .container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2vw;
+}
+
+.container:last-child{
+padding-bottom: 4.5vw;
+}
+
+
+.emptyNotExist{
+    display: none;
+}
+
+.container__checkbox{
+
+    width: 3.5vw;
+    height: 2vw;
 }
