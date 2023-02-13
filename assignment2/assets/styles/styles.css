@@ -1,0 +1,52 @@
+
+.wrapper{
+    margin: 5% 20% 0 20%;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.input__heading {
+    color: black;
+}
+
+.input, .result, .input__heading, .button{
+    font-size: 1.5vw;
+}
+
+.input{
+    padding-bottom: 3%;
+}
+
+.input__content{
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+}
+
+.number{
+    border: 2px solid teal;
+    opacity: 70%;
+}
+
+.button {
+    padding: 1%;
+    margin-left: 5%;
+    background-color: teal;
+    color: aliceblue;
+    border: rgb(8, 58, 58);
+    opacity: 90%;
+    cursor: pointer;
+}
+.button:hover{
+    opacity: 80%;
+    transform: scale(1.01);
+}
+
+.result{
+    padding: 1% 0 1% 0;
+}
+
+.result__number, .result__length, .result__sum, .result__reverse {
+padding: 0.5% 0 0.5% 0;
+}
