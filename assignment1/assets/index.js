@@ -7,6 +7,7 @@ const emptyContainer=document.querySelector('.emptyContainer');
 const toDoList=[];
 
 cleanButton.disabled=true;
+cleanButton.style.cursor='not-allowed';
 
 addButton.onclick = () => {
     const inputValue=taskTextInput.value;
@@ -16,6 +17,7 @@ addButton.onclick = () => {
         addTask();
         emptyContainer.className='emptyNotExist';
         cleanButton.disabled=false;
+        cleanButton.style.cursor='pointer';
     }
 console.log(toDoList);
 }
@@ -49,7 +51,7 @@ function addTask(){
     containerCheckbox.checked=item.checked;
     containerCheckbox.addEventListener('change', function() {
         if (this.checked) {
-            containerContent.style.textDecoration="line-through 2px pink";
+            containerContent.style.textDecoration="line-through 2px rgb(52, 158, 158)";
             containerContent.style.fontWeight='bold';
         } else{
             containerContent.style.color="black";
@@ -67,4 +69,5 @@ cleanButton.onclick = () => {
     emptyContainer.classList.remove('emptyNotExist');
     emptyContainer.style.fontSize='1.5vw';
     cleanButton.disabled=true;
+    cleanButton.style.cursor="not-allowed";
 }

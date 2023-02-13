@@ -1,14 +1,23 @@
+.page {
+    margin: 0;
+    padding: 0;
+}
+
+.image{
+    width: 22%;
+    padding-bottom: 4%;
+}
 
 .wrapper{
-    margin: 5% 20% 0 20%;
-    padding: 0;
+    margin: 3% 15% 0 15%;
+    padding: 0 0 10% 0;
     max-width: 100%;
     font-family: 'Open Sans', sans-serif;
 }
 
 .input__heading, .task-list__heading {
     font-size: 2vw;
-    color: black;
+    color: rgba(16, 143, 136);
 }
 
 .input{
@@ -17,16 +26,21 @@
 .text{
     font-size: 1.6vw;
     padding: 1.4%;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(16, 143, 136, 0.2);
     border-radius: 0.5vw;
     flex-grow: 0.9;
 }
 .button-add, .button-clean{
     font-size: 1.4vw;
     padding: 0.9% 3% 0.9% 3%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(16, 143, 136, 0.2);
     border-radius: 0.5vw;
+    background-color: rgb(101, 172, 172);
+    color: azure;
     cursor: pointer;
+}
+.button-clean{
+    color: rgb(253, 253, 253);
 }
 .input__content{
     display: flex;
@@ -35,9 +49,11 @@
     padding-top: 2%;
 }
 
-
 .task-list__button{
     float: right;
+}
+.button-add:hover{
+    transform: scale(1.02);
 }
 
 .container__checkbox{
@@ -69,7 +85,7 @@ position: relative;
     height: 1.5em;
     width: 1.5em;
     background-color: white;
-    border: 1px solid rgb(211, 53, 132);
+    border: 1px solid rgb(53, 179, 211);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -79,13 +95,13 @@ position: relative;
 }
 
 .container input:checked::before {
-background-color: rgb(236, 113, 199);
-border: 1px solid rgb(211, 53, 132);
+background-color: rgb(59, 187, 187);
+border: 1px solid rgb(52, 158, 158);
 }
 .container input:checked::after{
     position: absolute;
     content:'\2713';
-    color: aliceblue;
+    color: white;
     bottom: 0.4%;
     right: 10%;
 }
