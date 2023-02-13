@@ -42,6 +42,8 @@
 
 .container__checkbox{
 margin-right: 3%;
+width: 1em;
+height: 1em;
 }
 
 .content{
@@ -54,7 +56,40 @@ margin-right: 3%;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 2vw;
+    font-size: 1.5vw;
 }
+
+.container input {
+position: relative;
+}
+
+.container input::before{
+    position: absolute;
+    content: "";
+    height: 1.5em;
+    width: 1.5em;
+    background-color: white;
+    border: 1px solid rgb(211, 53, 132);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.3 all ease;
+}
+
+.container input:checked::before {
+background-color: rgb(236, 113, 199);
+border: 1px solid rgb(211, 53, 132);
+}
+.container input:checked::after{
+    position: absolute;
+    content:'\2713';
+    color: aliceblue;
+    bottom: 0.4%;
+    right: 10%;
+}
+
 
 .container:last-child{
 padding-bottom: 4.5vw;
@@ -65,8 +100,7 @@ padding-bottom: 4.5vw;
     display: none;
 }
 
-.container__checkbox{
 
-    width: 3.5vw;
-    height: 2vw;
+.emptyContainer{
+    font-size: 1.5vw;
 }

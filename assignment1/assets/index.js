@@ -49,9 +49,12 @@ function addTask(){
     containerCheckbox.checked=item.checked;
     containerCheckbox.addEventListener('change', function() {
         if (this.checked) {
-            containerContent.style.color="red";
+            containerContent.style.textDecoration="line-through 2px pink";
+            containerContent.style.fontWeight='bold';
         } else{
             containerContent.style.color="black";
+            containerContent.style.textDecoration="none";
+            containerContent.style.fontWeight='normal';
         }
     });
 
@@ -62,5 +65,6 @@ function addTask(){
 cleanButton.onclick = () => {
     taskContent.innerHTML="";
     emptyContainer.classList.remove('emptyNotExist');
+    emptyContainer.style.fontSize='1.5vw';
     cleanButton.disabled=true;
 }
