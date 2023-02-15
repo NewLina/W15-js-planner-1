@@ -25,8 +25,6 @@ function createTask(str) {
     const task = {
         todo: str,
         checked: false,
-        colorChecked: "red",
-        color: "black"
     }
     toDoList.push(task);
 }
