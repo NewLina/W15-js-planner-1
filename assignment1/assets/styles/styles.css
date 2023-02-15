@@ -1,6 +1,10 @@
 .page {
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    height: 100vh;
+    background-image: url('../images/sky1.jpg');
+    background-size: cover;
 }
 
 .image{
@@ -9,10 +13,16 @@
 }
 
 .wrapper{
-    margin: 3% 15% 0 15%;
-    padding: 0 0 10% 0;
+    margin: 5% 20% 10% 20%;
+    padding: 2% 5% 10% 5%;
     max-width: 100%;
     font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    border: 1px dotted #40E0D0;
+
+}
+.task-list{
+    border-top: 1px dashed #40E0D0;
 }
 
 .input__heading, .task-list__heading {
@@ -24,12 +34,14 @@
     padding-bottom: 10%;
 }
 .text{
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     padding: 1.4%;
     border: 3px solid rgba(16, 143, 136, 0.2);
     border-radius: 0.5vw;
     flex-grow: 0.9;
+    color: #047272;
 }
+
 .button-add, .button-clean{
     font-size: 1.4vw;
     padding: 0.9% 3% 0.9% 3%;
@@ -72,11 +84,15 @@ height: 1em;
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 2vw;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
+    color: #047272;
 }
 
 .container input {
 position: relative;
+}
+.container input:hover{
+    transform: scale(1.05);
 }
 
 .container input::before{
@@ -111,12 +127,11 @@ border: 1px solid rgb(52, 158, 158);
 padding-bottom: 4.5vw;
 }
 
-
 .emptyNotExist{
     display: none;
 }
 
-
 .emptyContainer{
     font-size: 1.5vw;
+    color: #047272;
 }

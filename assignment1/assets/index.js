@@ -4,7 +4,7 @@ const taskContent=document.querySelector('.content');
 const cleanButton=document.querySelector('.button-clean');
 const emptyContainer=document.querySelector('.emptyContainer');
 
-const toDoList=[];
+let toDoList=[];
 
 cleanButton.disabled=true;
 cleanButton.style.cursor='not-allowed';
@@ -19,55 +19,41 @@ addButton.onclick = () => {
         cleanButton.disabled=false;
         cleanButton.style.cursor='pointer';
     }
-console.log(toDoList);
 }
 
 function createTask(str) {
     const task = {
-        todo: taskTextInput.value,
-        checked: false
+        todo: str,
+        checked: false,
+        colorChecked: "red",
+        color: "black"
     }
     toDoList.push(task);
 }
 
 function addTask(){
-    toDoList.forEach (function(item) {
-
-    const container=document.createElement('div');
-    container.className='container';
-    taskContent.append(container);
-
-    const containerContent=document.createElement('label');
-    containerContent.className='container__content';
-    containerContent.setAttribute('for', 'taskTextContent');
-    container.append(containerContent);
-    containerContent.textContent=item.todo;
-
-    const containerCheckbox=document.createElement('input');
-    containerCheckbox.className='container__checkbox';
-    containerCheckbox.id='taskTextContent';
-    containerCheckbox.type="checkbox";
-    container.append(containerCheckbox);
-    containerCheckbox.checked=item.checked;
-    containerCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            containerContent.style.textDecoration="line-through 2px rgb(52, 158, 158)";
-            containerContent.style.fontWeight='bold';
-        } else{
-            containerContent.style.color="black";
-            containerContent.style.textDecoration="none";
-            containerContent.style.fontWeight='normal';
-        }
-    });
-
-    })
-    toDoList.length=0; 
+    let displayTask='';
+    toDoList.forEach (function(item, i) {
+    displayTask+=`
+    <div class='content__container container'>
+        <label class='container__content' for='item_${i}'>${item.todo}</label>
+        <input class='container__checkbox' id='item_${i}' type='checkbox' ${item.checked ?  'checked' : ''}  >
+    </div>`;
+    
+    taskContent.innerHTML = displayTask;
+    });  
 }
 
 cleanButton.onclick = () => {
     taskContent.innerHTML="";
     emptyContainer.classList.remove('emptyNotExist');
-    emptyContainer.style.fontSize='1.5vw';
+    emptyContainer.className='emptyContainer';
+
     cleanButton.disabled=true;
     cleanButton.style.cursor="not-allowed";
+    toDoList.length=0;
 }
+
+taskContent.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+})
